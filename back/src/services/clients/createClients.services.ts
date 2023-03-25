@@ -13,9 +13,24 @@ const createClientsService = async (clientData: ICreateClient) => {
         email: clientData.email
     })
 
+    const verifyTelephone = await clientRepository.findOneBy({
+        telephone: clientData.telephone
+    })
+
+    const verifyPassword = await clientRepository.findOneBy({
+        telephone: clientData.password
+    })
+
     if(verifyEmail){
-        throw new AppError("Email Already Exists")
+        throw new AppError("Email Already Been Used")
     }
+    if (verifyTelephone){
+        throw new AppError("Telephone Already Been Used")
+    }
+    if (verifyPassword){
+        throw new AppError("Password Already Been Used")
+    }
+
 
     await clientRepository.save(client)
 

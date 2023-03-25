@@ -3,6 +3,7 @@ import {SchemaOf} from 'yup'
 import { IClientResponse, ICreateClient } from '../interfaces/clients'
 
 const clientWithoutPasswordSerializer: SchemaOf<IClientResponse> = yup.object().shape({
+    isActive: yup.boolean().required(),
     createdAt: yup.date().required(),
     telephone: yup.string().required(),
     email:yup.string().email().required(),

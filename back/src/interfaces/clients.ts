@@ -12,5 +12,6 @@ export interface IClientResponse {
     email:string
     telephone: string
     createdAt: Date
+    isActive: boolean
 }
 
