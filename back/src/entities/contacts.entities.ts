@@ -14,9 +14,6 @@ class Contacts{
     @Column({length: 150})
     email:string
 
-    @Column({length: 150})
-    password: string
-
     @Column({length: 10})
     telephone: string
 
