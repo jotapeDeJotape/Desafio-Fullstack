@@ -9,7 +9,7 @@ const deleteClientServices = async (clientID) => {
     })
 
     if(!client.isActive){
-        throw new AppError('Client is Already Inactive', 400)
+        throw new AppError('Client is Already Inactive', 404)
     }
 
     client.isActive = false

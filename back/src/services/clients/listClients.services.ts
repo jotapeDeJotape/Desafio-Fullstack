@@ -8,7 +8,9 @@ const listClientsServices = async () => {
     const client = await clientRepository.find()
     
 
-    const validate = listArraySerializer.validate(client)
+    const validate = listArraySerializer.validate(client, {
+        stripUnknown:true
+    })
 
     return validate
 
