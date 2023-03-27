@@ -6,11 +6,17 @@ export interface ICreateClient {
     createdAt: Date
 }
 
+export interface ILoginClient {
+    email:string
+    password:string
+}
+
 export interface IClientResponse {
     id: string
     fullName:string
     email:string
     telephone: string
     createdAt: Date
+    isActive: boolean
 }
 

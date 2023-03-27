@@ -14,11 +14,11 @@ class Contacts{
     @Column({length: 150})
     email:string
 
-    @Column({length: 150})
-    password: string
-
-    @Column({length: 10})
+    @Column({length: 11})
     telephone: string
+
+    @Column({default:true})
+    isActive: boolean
 
     @CreateDateColumn()
     createdAt: Date

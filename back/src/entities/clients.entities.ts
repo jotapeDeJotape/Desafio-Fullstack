@@ -20,6 +20,9 @@ class Clients{
     @Column({length: 11})
     telephone: string
 
+    @Column({default:true})
+    isActive: boolean
+
     @CreateDateColumn()
     createdAt: Date
 
