@@ -22,13 +22,13 @@ const createClientsService = async (clientData: ICreateClient) => {
     })
 
     if(verifyEmail){
-        throw new AppError("Email Already Been Used",401)
+        throw new AppError("Este Email Já Está Em Uso",401)
     }
     if (verifyTelephone){
-        throw new AppError("Telephone Already Been Used",401)
+        throw new AppError("Este Telephone Já Está Em Uso",401)
     }
     if (verifyPassword){
-        throw new AppError("Password Already Been Used",401)
+        throw new AppError("Está Senha Já Está Em Uso",401)
     }
 
 

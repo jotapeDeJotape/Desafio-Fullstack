@@ -16,7 +16,7 @@ const LandingPage = ()  => {
                 <Flex onClick={onToggle} h={800} w={'100%'} paddingTop={10}  alignItems={'flex-start'} justifyContent={'center'}>
                 <Box  w={'100%'} h={'50%'} alignItems={'center'} display={'flex'} flexDirection={'column'} gap={5}>
                     <Text  fontWeight={'bold'} fontSize={'45px'} color={'white'}> <SunIcon/> Stars System</Text>
-                    <Text fontWeight={'bold'} fontSize='lg' color={'white'} textDecorationLine={'underline'} letterSpacing={2}>Estrelas se Conectam Por Aqui!</Text>
+                    <Text fontWeight={'bold'} fontSize='md' color={'white'} textDecorationLine={'underline'} letterSpacing={2}>Estrelas se Conectam Por Aqui!</Text>
                     <Box gap={5} display={'flex'} flexDirection={'column'} alignItems={'center'} w={'100%'}>
                         {loginOn ? (
                             <>     
