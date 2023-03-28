@@ -18,7 +18,7 @@ const listContactsByClientService = async (clientID:string) => {
         }
     })
 
-    console.log(contacts)
+    
 
     const listContacts = listContactsSerializers.validate(contacts, {
         stripUnknown:true

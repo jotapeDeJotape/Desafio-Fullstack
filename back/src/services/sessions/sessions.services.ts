@@ -15,11 +15,11 @@ const createSessionService = async({email, password}) => {
     const passwordMatch = await compare(password, clientEmail.password)
 
     if(!clientEmail || !passwordMatch ){
-        throw new AppError("Your Email Or Password Are Invalid", 403)
+        throw new AppError("Seu Email Ou Sua Senha estão Invalidos", 403)
     }
 
     if(!clientEmail.isActive){
-        throw new AppError("Client Is Not Active", 400)
+        throw new AppError("Cliente Não está Ativo", 400)
     }
 
     const token = jwt.sign({}, process.env.SECRET_KEY, {

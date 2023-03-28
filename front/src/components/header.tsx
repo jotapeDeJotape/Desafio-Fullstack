@@ -46,7 +46,7 @@ const Header = () => {
                 onClick={onToggle}/>
             <HStack spacing={8} alignItems={'center'} gap={50}>
             <Box>
-                <Text fontWeight={'bold'} fontSize={25} color={'white'}> <SunIcon/> StarsSystem</Text>
+                <Text fontWeight={'bold'} fontSize={24} color={'white'}> <SunIcon/> StarsSystem</Text>
             </Box>
             <HStack
               color={'white'}

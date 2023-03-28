@@ -15,3 +15,9 @@ export interface ICreateContact{
     telephone: string
     client: object
 }
+
+export interface IContactPatch {
+    fullName?:string
+    email?:string
+    telephone?: string
+}

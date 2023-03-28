@@ -1,9 +1,10 @@
 import { Request,Response } from "express";
-import { ICreateContact } from "../interfaces/contacts";
+import { IContact, ICreateContact, IContactPatch } from "../interfaces/contacts";
 import { createContactServices } from "../services/contacts/createContacts.services";
 import { deleteContactsServices } from "../services/contacts/deleteContacts.services";
 import { listContactsService } from "../services/contacts/listAllContacts.services";
 import { listContactsByClientService } from "../services/contacts/listContactsByClient.services";
+import { patchContactService } from "../services/contacts/patchContacts.services";
 import { retriveContactsServices } from "../services/contacts/retriveContact.services";
 
 const  createContactsControllers = async(req: Request,res: Response) => {
@@ -35,5 +36,12 @@ const deleteContactsControllers = async(req:Request, res: Response) => {
     const deleteContacts = await deleteContactsServices(contactID)
     return res.status(204).json(deleteContacts)
 }
+const patchContactsControllers = async(req:Request, res: Response) => {
+    const contactID:string = req.params.id
+    const contactData: IContact = req.contact
+    const contactPatchedData: IContactPatch = req.body
+    const patchContacts = await patchContactService(contactPatchedData, contactData, contactID)
+    return res.status(200).json(patchContacts)
+}
 
-export {createContactsControllers, listContactsControllers, listContactsByClientControllers,retriveContactsControllers, deleteContactsControllers}
+export {createContactsControllers, listContactsControllers, listContactsByClientControllers,retriveContactsControllers, deleteContactsControllers, patchContactsControllers}

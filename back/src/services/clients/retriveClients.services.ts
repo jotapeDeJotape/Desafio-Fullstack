@@ -10,7 +10,7 @@ const retriveClientServices = async (clientID) => {
     })
     
     if(!client){
-        throw new AppError("Client Doesn't Exists",404)
+        throw new AppError("Cliente Não Existe",404)
     }
 
     const clientWithoutPassword = await clientWithoutPasswordSerializer.validate(client,{
