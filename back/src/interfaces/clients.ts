@@ -20,3 +20,11 @@ export interface IClientResponse {
     isActive: boolean
 }
 
+export interface IClientPatch {
+    id?: string
+    fullName?:string
+    password?: string
+    email?:string
+    telephone?: string
+}
+

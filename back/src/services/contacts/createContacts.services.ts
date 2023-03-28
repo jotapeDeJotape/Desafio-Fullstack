@@ -27,10 +27,10 @@ const createContactServices = async (contactData:ICreateContact, clientID:string
     })
 
     if(contactEmail){
-        throw new AppError("Email Already Been Used",401)
+        throw new AppError("Email Já Está Em Uso",401)
     }
     if(contactTelephone){
-        throw new AppError ("Telephone Already Been Used",401)
+        throw new AppError ("Telephone Já Está Em Uso",401)
     }
 
     contact.client = client

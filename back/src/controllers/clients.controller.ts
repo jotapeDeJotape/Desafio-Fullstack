@@ -1,8 +1,9 @@
 import { Request,Response } from "express";
-import { ICreateClient } from "../interfaces/clients";
+import { IClientPatch, IClientResponse, ICreateClient } from "../interfaces/clients";
 import { createClientsService } from "../services/clients/createClients.services";
 import { deleteClientServices } from "../services/clients/deleteClients.services";
 import { listClientsServices } from "../services/clients/listClients.services";
+import { patchClientsService } from "../services/clients/patchClients.services";
 import { retriveClientServices } from "../services/clients/retriveClients.services";
 
  const  createClientsControllers = async(req: Request,res: Response) => {
@@ -28,4 +29,12 @@ const deleteClientsControllers = async(req:Request, res: Response) => {
     return res.status(204).json(deleteClient)
 }
 
-export {createClientsControllers, listClientsControllers, retriveClientsControllers, deleteClientsControllers}
+const patchClientsControllers = async(req:Request, res: Response) => {
+    const clientID = req.params.id
+    const clientDataPatched: IClientPatch = req.body
+    const clientData: IClientResponse = req.client 
+    const patchClients = await patchClientsService(clientDataPatched,clientData,clientID)
+    return res.status(200).json(patchClients)
+}
+
+export {createClientsControllers, listClientsControllers, retriveClientsControllers, deleteClientsControllers, patchClientsControllers}

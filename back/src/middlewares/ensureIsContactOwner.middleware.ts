@@ -15,13 +15,15 @@ const ensureIsContactOwner = async(req:Request, res: Response, next: NextFunctio
         }
     })
 
+    req.contact = ensureIsContactOwner
+
     if(ensureIsContactOwner){
         return next()
     }
 
 
 
-    throw new AppError("You Don't Own This Contact", 403)
+    throw new AppError("Você não é o Dono Deste Contato", 403)
 }
 
 export {ensureIsContactOwner}

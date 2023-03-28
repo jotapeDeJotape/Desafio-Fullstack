@@ -18,7 +18,7 @@ const ensureIsOwner = async(req:Request, res: Response, next: NextFunction) => {
         return next()
     }
 
-    throw new AppError("You're Are Not The Owner Of This Account", 403)
+    throw new AppError("Você não é o Dono Desta Conta", 403)
 }
 
 export {ensureIsOwner}
