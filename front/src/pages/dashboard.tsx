@@ -16,7 +16,7 @@ const DashBoard = ({name}: IUser) => {
 export const getServerSideProps:GetServerSideProps = async (ctx) => {
   const cookies = nookies.get(ctx)
   
-  
+    
   if(!cookies["stars.token"]){
       return {
         redirect: {
