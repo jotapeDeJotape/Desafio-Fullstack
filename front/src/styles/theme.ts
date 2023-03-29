@@ -25,8 +25,8 @@ const custonTheme = extendTheme({
     },
   },
   fonts: {
-    heading: "Montserrat",
-    body: "Montserrat",
+    heading: `"Mina", sans-serif`,
+    body: `'Raleway', sans-serif`,
   },
   fontSises: {
     xs: "0.75rem",

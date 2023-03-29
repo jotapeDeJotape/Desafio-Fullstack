@@ -3,7 +3,7 @@ import { object } from "yup"
 import AppDataSource from "../../data-source"
 import { Clients } from "../../entities/clients.entities"
 import { IClientPatch, IClientResponse } from "../../interfaces/clients"
-import { clientWithoutPasswordSerializer } from "../../schemas/clients.schemas"
+import { clientWithoutPasswordSerializer, PatchclientPasswordSerializer } from "../../schemas/clients.schemas"
 
 
 const patchClientsService = async (clientDataPatch: IClientPatch, clientData:IClientResponse, ClientID:string) => {
@@ -32,7 +32,7 @@ const patchClientsService = async (clientDataPatch: IClientPatch, clientData:ICl
     const clientPatched = await clientRepository.save(patchClient)
      
 
-    const validateReturn = await clientWithoutPasswordSerializer.validate(clientPatched, {
+    const validateReturn = await PatchclientPasswordSerializer.validate(clientPatched, {
         stripUnknown:true
     })
 

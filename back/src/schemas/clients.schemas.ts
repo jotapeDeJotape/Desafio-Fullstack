@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 import {SchemaOf} from 'yup'
-import { IClientResponse, ICreateClient } from '../interfaces/clients'
+import { IClientPatch, IClientResponse, ICreateClient } from '../interfaces/clients'
 
 const clientWithoutPasswordSerializer: SchemaOf<IClientResponse> = yup.object().shape({
     isActive: yup.boolean().required(),
@@ -11,6 +11,25 @@ const clientWithoutPasswordSerializer: SchemaOf<IClientResponse> = yup.object().
     id: yup.string().required()
 })
 
-const listArraySerializer = yup.array(clientWithoutPasswordSerializer).nullable()
+const ListSchemaSerializer: SchemaOf<IClientResponse> = yup.object().shape({
+    isActive: yup.boolean().notRequired(),
+    createdAt: yup.date().notRequired(),
+    telephone: yup.string().notRequired(),
+    email:yup.string().email().notRequired(),
+    fullName: yup.string().notRequired(),
+    id: yup.string().notRequired()
+})
 
-export {clientWithoutPasswordSerializer, listArraySerializer}    
+const PatchclientPasswordSerializer: SchemaOf<IClientPatch> = yup.object().shape({
+    isActive: yup.boolean().notRequired(),
+    createdAt: yup.date().notRequired(),
+    telephone: yup.string().notRequired(),
+    password: yup.string().notRequired(),
+    email:yup.string().email().notRequired(),
+    fullName: yup.string().notRequired(),
+    id: yup.string().notRequired()
+})
+
+const listArraySerializer = yup.array(ListSchemaSerializer).nullable()
+
+export {clientWithoutPasswordSerializer, listArraySerializer, PatchclientPasswordSerializer}    
