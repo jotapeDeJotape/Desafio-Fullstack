@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 interface ClientProviderData {
     DoPatch: (clientDataPatch: IPatch) => void
+    DoDelete: () => void
     client: null
 }
 
@@ -45,7 +46,7 @@ export const ClientContextProvider = ({children}:IProviderProps) => {
                 router.reload()
                 
             }).catch((error) => {
-                console.log(error)
+                
                 toast({title: "success", variant: "solid", position: "bottom-right", isClosable: true,
                 render: () => (
                      <Box color={"gray.50"} p={3} bg={"green.600"} fontWeight={"bold"} borderRadius={"md"}>
@@ -53,6 +54,29 @@ export const ClientContextProvider = ({children}:IProviderProps) => {
                 </Box>)})
             })
         }        
+    }
+
+
+    const DoDelete = async () => {
+        const token = clientID['stars.token']
+        if(token){
+            api.defaults.headers.authorization = `Bearer ${token}`
+            await api.delete(`/clients/${clientID["stars.id"]}`)
+            .then((response) => {
+                toast({title: "success", variant: "solid", position: "bottom-right", isClosable: true,
+                render: () => (
+                     <Box color={"gray.50"} p={3} bg={"green.600"} fontWeight={"bold"} borderRadius={"md"}>
+                    Cliente Deletado Com Sucesso!
+                </Box>)})
+            })
+            .catch((error) => {
+                toast({title: "success", variant: "solid", position: "bottom-right", isClosable: true,
+                render: () => (
+                     <Box color={"gray.50"} p={3} bg={"green.600"} fontWeight={"bold"} borderRadius={"md"}>
+                    Algo De Errado Aconteceu
+                </Box>)})
+            })
+        }
     }
 
     const GetUser = async () => {
@@ -68,9 +92,8 @@ export const ClientContextProvider = ({children}:IProviderProps) => {
 
 
 
-
     return (
-        <clientContext.Provider value={{DoPatch, client}}>
+        <clientContext.Provider value={{DoPatch, client, DoDelete}}>
             {children}
         </clientContext.Provider>
     )

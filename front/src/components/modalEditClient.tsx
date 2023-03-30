@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
 import { IPatch } from "@/types"
 import { useClient } from "@/contexts/clientContext"
+import ModalDeleteClient from "./modalDeleteClient"
 
 
 const ModalEditClient = () => {
@@ -82,9 +83,7 @@ const ModalEditClient = () => {
                                                 
                                                 }
                                 </FormControl>
-                                        <Button  size="lg" variant="default" onClick={handleSubmit(onFormSubmit)}>
-                                            Atualizar
-                                        </Button>
+                                        
                                 <FormControl isRequired isInvalid={emailError} >
                                     <FormLabel fontFamily={'monospace'} fontSize='25'>E-mail</FormLabel>
                                     <Input placeholder="Alterar Email"  size={['md', 'lg']} required type="email" bg={'gray.300'} focusBorderColor="blue.800" borderColor={"black"}  {...register('email')} onChange={(e) => setInputEmail(e.target.value)}  />
@@ -132,15 +131,21 @@ const ModalEditClient = () => {
                                                     {errors.telephone?.message}
                                                 </FormErrorMessage>}
                                     </FormControl>
-                                    <Text color={'red.600'} fontWeight='bold'>Cuidado! Apenas Mude A Informação Que Precise!</Text>
+                                    
                             </ModalBody>
-                            <ModalFooter justifyContent={'center'}>
+                            <ModalFooter justifyContent={'space-between'}>
+                            <Button  size="lg" variant="default" onClick={handleSubmit(onFormSubmit)}>
+                                            Atualizar
+                                        </Button>
                                 <Button size="lg" variant="default" onClick={onClose}>
                                     Fechar
                                 </Button>
                             </ModalFooter>
                         </ModalContent>
                         </Modal> 
+                    </MenuItem>
+                    <MenuItem bg={'gray.200'} _hover={{bg:'#040053', color: "white"}}>
+                    <ModalDeleteClient/>
                     </MenuItem>
                     <MenuItem bg={'gray.200'} _hover={{bg:'#040053', color: "white"}} onClick={() => LogOut()}>
                       Sair
