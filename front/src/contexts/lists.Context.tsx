@@ -29,11 +29,11 @@ export const ListsProvider = ({children}: IProviderProps) => {
                 console.log(error)
             })
         }
-    // useEffect(() => {
-    //         if(clientID['stars.id']){
-    //             ListClientContacts()
-    //         }
-    //     },)
+        useEffect(() => {
+                if(clientID['stars.id']){
+                    ListClientContacts()
+                }
+            },)
 
 
     useEffect(() => {

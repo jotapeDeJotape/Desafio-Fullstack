@@ -1,4 +1,5 @@
 import Header from '@/components/header'
+import MainPage from '@/components/mainPage'
 import { IUser } from '@/types'
 import { GetServerSideProps } from 'next'
 import nookies from "nookies"
@@ -9,6 +10,7 @@ const DashBoard = ({name}: IUser) => {
   return (
     <>
         <Header name={name} isLogged/>
+        <MainPage/>
     </>
   )
 }

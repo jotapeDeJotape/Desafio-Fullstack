@@ -15,7 +15,8 @@ const listContactsByClientService = async (clientID:string) => {
     const contacts = await contactsRepository.findBy({
         client: {
             id: client.id
-        }
+        },
+        isActive: true
     })
 
     

@@ -38,6 +38,7 @@ const ModalEditClient = () => {
     })
 
     const onFormSubmit = (formData: IPatch) => {
+        
         DoPatch(formData)
         
     }
@@ -66,7 +67,7 @@ const ModalEditClient = () => {
                     <Text onClick={onOpen}>Editar Perfil</Text>
                         <Modal isOpen={isOpen} onClose={onClose}>
                         <ModalOverlay/>
-                                <ModalContent w={'80%'} h={'700px'}>
+                                <ModalContent w={'90%'} h={'700px'}>
                             <ModalHeader>Editar Perfil</ModalHeader>
                             <ModalBody>
                                     <FormControl isRequired isInvalid={fullNameError} >
@@ -133,7 +134,7 @@ const ModalEditClient = () => {
                                     </FormControl>
                                     
                             </ModalBody>
-                            <ModalFooter justifyContent={'space-between'}>
+                            <ModalFooter gap={3} justifyContent={'space-between'}>
                             <Button  size="lg" variant="default" onClick={handleSubmit(onFormSubmit)}>
                                             Atualizar
                                         </Button>

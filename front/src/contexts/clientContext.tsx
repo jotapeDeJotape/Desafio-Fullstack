@@ -1,4 +1,4 @@
-import { IPatch, IProviderProps } from "@/types";
+import { IPatch, IProviderProps, IRegister } from "@/types";
 import { createContext, useContext, useEffect, useState } from "react";
 import nookies, { setCookie } from "nookies"
 import api from "@/services/api";
@@ -8,8 +8,10 @@ import { useRouter } from "next/router";
 interface ClientProviderData {
     DoPatch: (clientDataPatch: IPatch) => void
     DoDelete: () => void
-    client: null
+    client: IRegister | undefined
 }
+
+
 
 
 const clientContext = createContext<ClientProviderData>({} as ClientProviderData)
@@ -19,7 +21,7 @@ export const ClientContextProvider = ({children}:IProviderProps) => {
     const toast = useToast()
     const router = useRouter()
     const clientID = nookies.get()
-    const [client, setClient] = useState(null)
+    const [client, setClient] = useState<IRegister | undefined>(undefined)
     
     
     const DoPatch = async (clientPatchData: IPatch) => {
@@ -49,7 +51,7 @@ export const ClientContextProvider = ({children}:IProviderProps) => {
                 
                 toast({title: "success", variant: "solid", position: "bottom-right", isClosable: true,
                 render: () => (
-                     <Box color={"gray.50"} p={3} bg={"green.600"} fontWeight={"bold"} borderRadius={"md"}>
+                     <Box color={"gray.50"} p={3} bg={"red.600"} fontWeight={"bold"} borderRadius={"md"}>
                     Algo De Errado Aconteceu
                 </Box>)})
             })
@@ -79,7 +81,7 @@ export const ClientContextProvider = ({children}:IProviderProps) => {
         }
     }
 
-    const GetUser = async () => {
+    const DoGetUser = async () => {
         await api.get(`/clients/${clientID['stars.id']}`)
         .then((response) => {
             setClient(response.data)
@@ -90,6 +92,11 @@ export const ClientContextProvider = ({children}:IProviderProps) => {
         })
     }
 
+    useEffect(() => {
+        if(clientID['stars.token']){
+            DoGetUser()
+        }
+    })
 
 
     return (
