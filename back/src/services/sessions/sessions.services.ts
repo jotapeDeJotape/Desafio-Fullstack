@@ -9,12 +9,16 @@ const createSessionService = async({email, password}) => {
     const clientRepository = AppDataSource.getRepository(Clients)
 
     const clientEmail = await clientRepository.findOneBy({
-        email: email
+        email: email,
     })
 
+    
+    if(!clientEmail ){
+        throw new AppError("Seu Email Ou Sua Senha estão Invalidos", 403)
+    }
     const passwordMatch = await compare(password, clientEmail.password)
-
-    if(!clientEmail || !passwordMatch ){
+    
+    if(!passwordMatch){
         throw new AppError("Seu Email Ou Sua Senha estão Invalidos", 403)
     }
 
@@ -27,7 +31,7 @@ const createSessionService = async({email, password}) => {
         expiresIn: '24h'
     })
 
-    return token
+    return {token, user: clientEmail.fullName, id: clientEmail.id}
 }
 
 

@@ -36,12 +36,12 @@ const Register = () => {
 
 
     return (
-        <Card  p={[1, 5, 8]} boxSize={[300, 400, 700]} h={[670, 700, 780]} bg={'gray.300'} borderRadius={'lg'} alignItems={'center'} display={'flex'} flexDirection={'column'}>
-        <CardHeader fontSize='2xl'>Crie Sua Conta</CardHeader>
+        <Card  p={[1, 5, 8]} boxSize={[400, 400, 600]} h={[650, 700, 780]} bg={'gray.300'} borderRadius={'lg'} alignItems={'center'} display={'flex'} flexDirection={'column'}>
+        <CardHeader fontFamily={'monospace'} fontSize='30'>Crie Sua Conta</CardHeader>
         <CardBody boxSize={'100%'} gap={[2, 3, 5]} display='flex' flexDirection={'column'}>
         <FormControl isRequired isInvalid={fullNameError}>
-            <FormLabel fontSize='20px'>Nome Completo</FormLabel>
-            <Input size={['md', 'lg']} required type="email" bg={'gray.300'} focusBorderColor="blue.800" borderColor={"black"} {...register('fullName')} onChange={(e) => setFullName(e.target.value)}  />
+            <FormLabel fontFamily={'monospace'} fontSize='25'>Nome Completo</FormLabel>
+            <Input size={['md', 'lg']} required type="text" bg={'gray.300'} focusBorderColor="blue.800" borderColor={"black"} {...register('fullName')} onChange={(e) => setFullName(e.target.value)}  />
             {!fullNameError ? (
                 <FormHelperText>
                             Digite Seu Nome Completo
@@ -54,7 +54,7 @@ const Register = () => {
                     }
         </FormControl>
         <FormControl isRequired isInvalid={emailError}>
-            <FormLabel fontSize='20px'>E-mail</FormLabel>
+            <FormLabel fontFamily={'monospace'} fontSize='25'>E-mail</FormLabel>
             <Input size={['md', 'lg']} required type="email" bg={'gray.300'} focusBorderColor="blue.800" borderColor={"black"} {...register("email")} onChange={(e) => setInputEmail(e.target.value)} />
             {!emailError ? (
                 <FormHelperText>
@@ -68,7 +68,7 @@ const Register = () => {
                     }
         </FormControl>
         <FormControl isRequired isInvalid={passwordError}>
-            <FormLabel fontSize='20px'>Senha</FormLabel>
+            <FormLabel fontFamily={'monospace'} fontSize='25'>Senha</FormLabel>
             <InputGroup>
                 <Input size={['md', 'lg']} required bg={'gray.300'} borderColor={"black"} focusBorderColor="blue.800" type={showPassword? "text":"password" } {...register("password")} onChange={(e) => setPasswordEmail(e.target.value)} />
                 <InputRightElement paddingTop={2}>
@@ -89,7 +89,7 @@ const Register = () => {
                     }
         </FormControl>
         <FormControl isRequired isInvalid={telephoneError}>
-            <FormLabel fontSize='20px'>Telefone</FormLabel>
+            <FormLabel fontFamily={'monospace'} fontSize='25'>Telefone</FormLabel>
             <Input size={['md', 'lg']} required type="text" bg={'gray.300'} focusBorderColor="blue.800" borderColor={"black"} {...register("telephone")} onChange={(e) => setTelephone(e.target.value)} />
             {!telephoneError ? (
                 <FormHelperText>
@@ -104,7 +104,7 @@ const Register = () => {
         </FormControl>
         </CardBody>
         <CardFooter paddingBottom={20}>
-        <Button size="lg" variant="default" onClick={handleSubmit(onFormSubmit)}>
+        <Button  size="lg" variant="default" onClick={handleSubmit(onFormSubmit)}>
             Registrar
         </Button>
         </CardFooter>
