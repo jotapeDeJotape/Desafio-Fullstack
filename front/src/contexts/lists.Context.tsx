@@ -35,25 +35,6 @@ export const ListsProvider = ({children}: IProviderProps) => {
                 }
             },)
 
-
-    useEffect(() => {
-        const ListAllClients = async () => {
-            api.get(`/contacts/`)
-            .then((response) => {
-                setAllContacts(allContacts)
-            })
-            .catch((error) => {
-                toast({title: "failed", variant: "solid", position: "top-left", isClosable: true,
-            render: () => (
-                 <Box color={"gray.50"} p={3} bg={"red.600"} fontWeight={"bold"} borderRadius={"md"}>
-                    Algo Deu Errado Na Listagem. Por Favor Tente Novamente
-            </Box>)})
-            })
-        }
-
-         ListAllClients()
-    }, )
-
     return (
         <ListsContext.Provider value={{clientsContacts}}>
             {children}

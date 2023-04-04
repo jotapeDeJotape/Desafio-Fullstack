@@ -14,7 +14,7 @@ const ListClientsContacts = () => {
         <>
             {clientsContacts.map((contact, index) => {
                 return (
-                <Card key={index} bg={'gray.200'} boxSize={[300]} w={[300]} border='4px' borderColor={'blue.400'} borderRadius={'3xl'} _hover={{cursor: 'pointer', bg:'gray.300'}}>
+                <Card key={index} bg={'gray.200'} boxSize={[400]} w={[300]} border='4px' borderColor={'blue.400'} borderRadius={'3xl'} _hover={{cursor: 'pointer', bg:'gray.300'}}>
                     <CardHeader borderBottom={'4px'} justifyContent={'center'} display={'flex'} alignItems={'center'} >
                         <Text fontFamily={'body'} fontWeight={'bold'} color={'black.500'}>Nome: {contact.fullName}</Text>
                     </CardHeader>
