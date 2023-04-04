@@ -2,28 +2,28 @@
 ﻿# Desafio-Fullstack
 
 
-Olá, este certo tem como objetivo te guiar, em como iniciar o projeto e ultilizar a aplicação, junto com cada retorno e requisição que vai ser feita.
+Olá, este documento tem como objetivo te guiar, em como iniciar o projeto e ultilizar a aplicação, junto com cada retorno e requisição que vai ser feita.
 
-OBS: Antes de tudo lembre-se do comando yarn na parte do back para instalar as dependencias e bibliotecas.
+# PASSO 1: Antes de tudo lembre-se do comando YARN na parte do back e o NPM I, na parte do front para instalar todas as bibliotecas e dependencias
 
-# PASSO 1: CRIE UM ARQUIVO .ENV E COLOQUE AS INFORMAÇÕES, o nome certo de cada propriedade para criar o banco de dados está no arquivo ENV.EXAMPLE
+# PASSO 2: CRIE UM ARQUIVO .ENV E COLOQUE AS INFORMAÇÕES, o nome certo de cada propriedade para criar o banco de dados está no arquivo ENV.EXAMPLE
 
 ![image](https://user-images.githubusercontent.com/100230592/229081105-a7f41e2d-e5e6-4755-b1c0-f0ec11ac09d0.png)
 
-# PASSO 2: NO TERMINAL USE CD BACK E PERSISTA AS MIGRAÇÕES QUE EXISTE COM O COMANDO: 
+# PASSO 3: NO TERMINAL USE CD BACK E PERSISTA AS MIGRAÇÕES QUE EXISTE COM O COMANDO: 
   yarn typeorm migration:run -d src/data-source.ts
   
-# PASSO 3 : RODE O SERVER AINDA NA CD BACK COM O COMANDO: 
+# PASSO 4 : RODE O SERVER AINDA NA CD BACK COM O COMANDO: 
 yarn run dev
 Esta Mensagem Deve Aparecer: 
 ![image](https://user-images.githubusercontent.com/100230592/229082463-5f9aa3de-980f-4fc9-b690-d4cba826c885.png)
 
-# PASSO 4 : INCIE O SITE AGORA CRIANDO OUTRO TERMINAL E APÓS USAR CD FRONT USE O COMANDO: 
+# PASSO 5 : INCIE O SITE AGORA CRIANDO OUTRO TERMINAL E APÓS USAR CD FRONT USE O COMANDO: 
 npm run dev
 Esta Mensagem Deve Aparecer
 ![image](https://user-images.githubusercontent.com/100230592/229082935-3cd1f025-42ec-4e35-9c4c-da61c8ef3fe0.png)
 
-# PASSO 5 : Ultilizando a API: 
+# PASSO 6 : Ultilizando a API: 
 
 # CLIENTES
 
