@@ -13,7 +13,7 @@ OBS: Deixe preparado dois powershells, para a pasta back, ultilizando o comando 
 ![image](https://user-images.githubusercontent.com/100230592/229816328-0fd78dac-e0f7-4bf5-b2af-5ee1c12bcb8b.png)
 
 
-# PASSO 2: CRIE UM ARQUIVO .ENV E COLOQUE AS INFORMAÇÕES, o nome certo de cada propriedade para criar o banco de dados está no arquivo ENV.EXAMPLE
+# PASSO 2: CRIE UM ARQUIVO .ENV E COLOQUE AS INFORMAÇÕES, o nome certo de cada propriedade que você colocou ao criar seu banco de dados.
 
 ![image](https://user-images.githubusercontent.com/100230592/229081105-a7f41e2d-e5e6-4755-b1c0-f0ec11ac09d0.png)
 
