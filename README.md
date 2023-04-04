@@ -4,7 +4,14 @@
 
 Olá, este documento tem como objetivo te guiar, em como iniciar o projeto e ultilizar a aplicação, junto com cada retorno e requisição que vai ser feita.
 
+OBS: Deixe preparado dois powershells, para a pasta back, ultilizando o comando CD BACK e outro para a pasta front ultilizando CD FRONT.
+
 # PASSO 1: Antes de tudo lembre-se do comando YARN na parte do back e o NPM I, na parte do front para instalar todas as bibliotecas e dependencias
+
+![image](https://user-images.githubusercontent.com/100230592/229816273-cbda994a-663a-448b-b13c-924a28146600.png)
+
+![image](https://user-images.githubusercontent.com/100230592/229816328-0fd78dac-e0f7-4bf5-b2af-5ee1c12bcb8b.png)
+
 
 # PASSO 2: CRIE UM ARQUIVO .ENV E COLOQUE AS INFORMAÇÕES, o nome certo de cada propriedade para criar o banco de dados está no arquivo ENV.EXAMPLE
 
