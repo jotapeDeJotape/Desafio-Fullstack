@@ -27,7 +27,7 @@ export const ContactProviderContext = ({children}: IProviderProps) => {
                 toast({title: "success", variant: "solid", position: "top-right", isClosable: true,
                 render: () => (
                      <Box color={"gray.50"} p={3} bg={"green.600"} fontWeight={"bold"} borderRadius={"md"}>
-                    Conta Criada Com o Sucesso!
+                    Contato Criada Com o Sucesso!
                 </Box>)})
             })
             .catch((error) => {
