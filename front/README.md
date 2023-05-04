@@ -80,7 +80,7 @@ A Stars System é um site básico aonde o cliente pode listar seus contatos, fac
    
    3. Acesse por este link: 
           
-          http://localhost:4000/
+          http://localhost:3000/
    
   
 
