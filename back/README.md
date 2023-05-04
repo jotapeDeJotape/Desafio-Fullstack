@@ -4,6 +4,11 @@
 
 Olá, este certo tem como objetivo te guiar, em como iniciar o projeto e ultilizar a aplicação, junto com cada retorno e requisição que vai ser feita.
 
+OBS: lembre-se de fazer isso dentro da pasta BACK
+
+# Antes de TUDO use o comando YARN para instalar as depêndencias 
+             yarn
+
 # PASSO 1: CRIE UM ARQUIVO .ENV E COLOQUE AS INFORMAÇÕES, o nome certo de cada propriedade para criar o banco de dados está no arquivo ENV.EXAMPLE
 
 ![image](https://user-images.githubusercontent.com/100230592/229081105-a7f41e2d-e5e6-4755-b1c0-f0ec11ac09d0.png)
