@@ -9,7 +9,7 @@ class Clients{
     id:string
 
     @Column({length: 150})
-    fullName:string
+    fullName: string
 
     @Column({length: 150})
     email:string
